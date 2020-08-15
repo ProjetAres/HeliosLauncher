@@ -3,7 +3,7 @@ const os     = require('os')
 const semver = require('semver')
 
 const { JavaGuard } = require('./assets/js/assetguard')
-const DropinModUtil  = require('./assets/js/dropinmodutil')
+const DropinModUtil  = require('./assets/js/dropinmodutil');
 
 const settingsState = {
     invalid: new Set()
@@ -444,7 +444,7 @@ function populateAuthAccounts(){
         const acc = authAccounts[val]
         authAccountStr += `<div class="settingsAuthAccount" uuid="${acc.uuid}">
             <div class="settingsAuthAccountLeft">
-                <img class="settingsAuthAccountImage" alt="${acc.displayName}" src="https://crafatar.com/renders/body/${acc.uuid}?scale=3&default=MHF_Steve&overlay">
+                <img class="settingsAuthAccountImage" alt="${acc.displayName}" src="${PATHS.CRAFATAR_INSTANCE}/renders/body/${acc.uuid}?scale=3&default=MHF_Steve&overlay">
             </div>
             <div class="settingsAuthAccountRight">
                 <div class="settingsAuthAccountDetails">
@@ -1219,7 +1219,7 @@ function populateAboutVersionInformation(){
  */
 function populateReleaseNotes(){
     $.ajax({
-        url: 'https://github.com/dscalzi/HeliosLauncher/releases.atom',
+        url: PATHS.RELEASE_NOTES,
         success: (data) => {
             const version = 'v' + remote.app.getVersion()
             const entries = $(data).find('entry')

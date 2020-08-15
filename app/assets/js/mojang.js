@@ -8,14 +8,15 @@
 // Requirements
 const request = require('request')
 const logger  = require('./loggerutil')('%c[Mojang]', 'color: #a02d2a; font-weight: bold')
+const PATHS = require("./paths");
 
 // Constants
 const minecraftAgent = {
     name: 'Minecraft',
     version: 1
 }
-// const authpath = 'https://authserver.mojang.com'
-const authpath = 'http://ares.lul.tf/auth'
+
+const authpath = PATHS.AUTHPATH;
 
 const statuses = [
     {
@@ -60,7 +61,7 @@ exports.statusToHex = function(status){
  */
 exports.status = function(){
     return new Promise((resolve, reject) => {
-        request.get('https://status.mojang.com/check',
+        request.get(PATHS.STATUS_PATH,
             {
                 json: true,
                 timeout: 2500

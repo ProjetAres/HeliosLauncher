@@ -3,6 +3,7 @@ const path = require('path')
 const request = require('request')
 
 const ConfigManager = require('./configmanager')
+const PATHS = require('./paths')
 const logger        = require('./loggerutil')('%c[DistroManager]', 'color: #a02d2a; font-weight: bold')
 
 /**
@@ -537,8 +538,7 @@ exports.pullRemote = function(){
         return exports.pullLocal()
     }
     return new Promise((resolve, reject) => {
-        const distroURL = 'http://mc.westeroscraft.com/WesterosCraftLauncher/distribution.json'
-        //const distroURL = 'https://gist.githubusercontent.com/dscalzi/53b1ba7a11d26a5c353f9d5ae484b71b/raw/'
+        const distroURL = PATHS.DISTRO_URL;
         const opts = {
             url: distroURL,
             timeout: 2500
