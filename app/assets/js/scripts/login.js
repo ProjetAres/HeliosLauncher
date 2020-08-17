@@ -173,12 +173,12 @@ function resolveError(err){
         if(err.error != null){
             if(err.error === 'ForbiddenOperationException'){
                 if(err.errorMessage != null){
-                    if(err.errorMessage === 'Invalid credentials. Invalid username or password.'){
+                    if(err.errorMessage === "Les informations d'identification sont invalides. Nom d'utilisateur ou mot de passe invalide."){
                         return {
                             title: Lang.queryJS('login.error.invalidCredentials.title'),
                             desc: Lang.queryJS('login.error.invalidCredentials.desc')
                         }
-                    } else if(err.errorMessage === 'Invalid credentials.'){
+                    } else if(err.errorMessage === "les informations d'identification sont invalides."){
                         return {
                             title: Lang.queryJS('login.error.rateLimit.title'),
                             desc: Lang.queryJS('login.error.rateLimit.desc')
@@ -202,20 +202,6 @@ function resolveError(err){
                         desc: Lang.queryJS('login.error.authDown.desc')
                     }
                 }
-            }
-        }
-    }
-    if(err.message != null){
-        if(err.message === 'NotPaidAccount'){
-            return {
-                title: Lang.queryJS('login.error.notPaid.title'),
-                desc: Lang.queryJS('login.error.notPaid.desc')
-            }
-        } else {
-            // Unknown error with request.
-            return {
-                title: Lang.queryJS('login.error.unknown.title'),
-                desc: err.message
             }
         }
     } else {
@@ -294,7 +280,7 @@ loginButton.addEventListener('click', () => {
             toggleOverlay(false)
         })
         toggleOverlay(true)
-        loggerLogin.log('Error while logging in.', err)
+        loggerLogin.log('Erreur lors de la connexion.', err)
     })
 
 })
