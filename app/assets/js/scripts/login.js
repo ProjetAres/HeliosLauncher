@@ -159,10 +159,10 @@ function formDisabled(v){
  * for our error overlay.
  * 
  * @param {Error | {cause: string, error: string, errorMessage: string}} err A Node.js
- * error or Mojang error response.
+ * error or Auth error response.
  */
 function resolveError(err){
-    // Mojang Response => err.cause | err.error | err.errorMessage
+    // Auth Response => err.cause | err.error | err.errorMessage
     // Node error => err.code | err.message
     if(err.cause != null && err.cause === 'UserMigratedException') {
         return {
@@ -204,8 +204,22 @@ function resolveError(err){
                 }
             }
         }
+    }
+    if(err.message != null){
+        if(err.message === 'NotPaidAccount'){
+            return {
+                title: Lang.queryJS('login.error.notPaid.title'),
+                desc: Lang.queryJS('login.error.notPaid.desc')
+            }
+        } else {
+            // Unknown error with request.
+            return {
+                title: Lang.queryJS('login.error.unknown.title'),
+                desc: err.message
+            }
+        }
     } else {
-        // Unknown Mojang error.
+        // Unknown auth error.
         return {
             title: err.error,
             desc: err.errorMessage
