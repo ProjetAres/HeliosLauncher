@@ -337,11 +337,11 @@ function bindAuthAccountSelect(){
             for(let i=0; i<selectBtns.length; i++){
                 if(selectBtns[i].hasAttribute('selected')){
                     selectBtns[i].removeAttribute('selected')
-                    selectBtns[i].innerHTML = 'Select Account'
+                    selectBtns[i].innerHTML = 'Sélectionnez le compte'
                 }
             }
             val.setAttribute('selected', '')
-            val.innerHTML = 'Selected Account &#10004;'
+            val.innerHTML = "Comptes en cours d'utilisation &#10004;"
             setSelectedAccount(val.closest('.settingsAuthAccount').getAttribute('uuid'))
         }
     })
@@ -415,12 +415,12 @@ function refreshAuthAccountSelected(uuid){
         const selBtn = val.getElementsByClassName('settingsAuthAccountSelect')[0]
         if(uuid === val.getAttribute('uuid')){
             selBtn.setAttribute('selected', '')
-            selBtn.innerHTML = 'Selected Account &#10004;'
+            selBtn.innerHTML = "Comptes en cours d'utilisation &#10004;"
         } else {
             if(selBtn.hasAttribute('selected')){
                 selBtn.removeAttribute('selected')
             }
-            selBtn.innerHTML = 'Select Account'
+            selBtn.innerHTML = 'Sélectionnez le compte'
         }
     })
 }
@@ -449,7 +449,7 @@ function populateAuthAccounts(){
             <div class="settingsAuthAccountRight">
                 <div class="settingsAuthAccountDetails">
                     <div class="settingsAuthAccountDetailPane">
-                        <div class="settingsAuthAccountDetailTitle">Username</div>
+                        <div class="settingsAuthAccountDetailTitle">Nom d'utilisateur</div>
                         <div class="settingsAuthAccountDetailValue">${acc.displayName}</div>
                     </div>
                     <div class="settingsAuthAccountDetailPane">
@@ -458,9 +458,9 @@ function populateAuthAccounts(){
                     </div>
                 </div>
                 <div class="settingsAuthAccountActions">
-                    <button class="settingsAuthAccountSelect" ${selectedUUID === acc.uuid ? 'selected>Selected Account &#10004;' : '>Select Account'}</button>
+                    <button class="settingsAuthAccountSelect" ${selectedUUID === acc.uuid ? 'selected>Compte sélectionné &#10004;' : '>Sélectionné le compte '}</button>
                     <div class="settingsAuthAccountWrapper">
-                        <button class="settingsAuthAccountLogOut">Log Out</button>
+                        <button class="settingsAuthAccountLogOut">Déconnecter</button>
                     </div>
                 </div>
             </div>
@@ -1140,12 +1140,12 @@ function populateJavaExecDetails(execPath){
     jg._validateJavaBinary(execPath).then(v => {
         if(v.valid){
             if(v.version.major < 9) {
-                settingsJavaExecDetails.innerHTML = `Selected: Java ${v.version.major} Update ${v.version.update} (x${v.arch})`
+                settingsJavaExecDetails.innerHTML = `Sélectionner: Java ${v.version.major} Update ${v.version.update} (x${v.arch})`
             } else {
-                settingsJavaExecDetails.innerHTML = `Selected: Java ${v.version.major}.${v.version.minor}.${v.version.revision} (x${v.arch})`
+                settingsJavaExecDetails.innerHTML = `Sélectionner: Java ${v.version.major}.${v.version.minor}.${v.version.revision} (x${v.arch})`
             }
         } else {
-            settingsJavaExecDetails.innerHTML = 'Invalid Selection'
+            settingsJavaExecDetails.innerHTML = 'Sélection invalide'
         }
     })
 }
@@ -1239,7 +1239,7 @@ function populateReleaseNotes(){
         },
         timeout: 2500
     }).catch(err => {
-        settingsAboutChangelogText.innerHTML = 'Failed to load release notes.'
+        settingsAboutChangelogText.innerHTML = 'Échec du chargement des notes de publication.'
     })
 }
 
@@ -1298,16 +1298,16 @@ function populateSettingsUpdateInformation(data){
                 shell.openExternal(data.darwindownload)
             })
         } else {
-            settingsUpdateButtonStatus('Downloading..', true)
+            settingsUpdateButtonStatus('Téléchargement..', true)
         }
     } else {
-        settingsUpdateTitle.innerHTML = 'You Are Running the Latest Version'
+        settingsUpdateTitle.innerHTML = 'Vous jouer avec la dernière version'
         settingsUpdateChangelogCont.style.display = 'none'
         populateVersionInformation(remote.app.getVersion(), settingsUpdateVersionValue, settingsUpdateVersionTitle, settingsUpdateVersionCheck)
-        settingsUpdateButtonStatus('Check for Updates', false, () => {
+        settingsUpdateButtonStatus('Vérifier les mises à jour', false, () => {
             if(!isDev){
                 ipcRenderer.send('autoUpdateAction', 'checkForUpdate')
-                settingsUpdateButtonStatus('Checking for Updates..', true)
+                settingsUpdateButtonStatus('Vérifications des mises à jour..', true)
             }
         })
     }

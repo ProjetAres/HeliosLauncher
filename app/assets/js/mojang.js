@@ -1,13 +1,13 @@
 /**
  * Mojang
  * 
- * This module serves as a minimal wrapper for Mojang's REST api.
+ * This module serves as a minimal wrapper for LostKingdoms auth's REST api.
  * 
  * @module mojang
  */
 // Requirements
 const request = require('request')
-const logger  = require('./loggerutil')('%c[Mojang]', 'color: #a02d2a; font-weight: bold')
+const logger  = require('./loggerutil')('%c[LostKingdoms auth]', 'color: #a02d2a; font-weight: bold')
 const PATHS = require("./paths");
 
 // Constants
@@ -30,7 +30,7 @@ const statuses = [
 // Functions
 
 /**
- * Converts a Mojang status color to a hex value. Valid statuses
+ * Converts a LostKingdoms auth status color to a hex value. Valid statuses
  * are 'green', 'yellow', 'red', and 'grey'. Grey is a custom status
  * to our project which represents an unknown status.
  * 
@@ -52,7 +52,7 @@ exports.statusToHex = function(status){
 }
 
 /**
- * Retrieves the status of Mojang's services.
+ * Retrieves the status of LostKingdoms auth's services.
  * The response is condensed into a single object. Each service is
  * a key, where the value is an object containing a status and name
  * property.
@@ -69,8 +69,8 @@ exports.status = function(){
             function(error, response, body){
 
                 if(error || response.statusCode !== 200){
-                    logger.warn('Unable to retrieve Mojang status.')
-                    logger.debug('Error while retrieving Mojang statuses:', error)
+                    logger.warn('Unable to retrieve LostKingdoms auth status.')
+                    logger.debug('Error while retrieving LostKingdoms auth statuses:', error)
                     //reject(error || response.statusCode)
                     for(let i=0; i<statuses.length; i++){
                         statuses[i].status = 'grey'
@@ -94,7 +94,7 @@ exports.status = function(){
 }
 
 /**
- * Authenticate a user with their Mojang credentials.
+ * Authenticate a user with their LostKingdoms auth credentials.
  * 
  * @param {string} username The user's username, this is often an email.
  * @param {string} password The user's password.
