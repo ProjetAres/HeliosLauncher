@@ -8,5 +8,5 @@ module.exports = {
   DARWIN_DMG: (info) =>
     `https://github.com/dscalzi/HeliosLauncher/releases/download/v${info.version}/helioslauncher-setup-${info.version}.dmg`,
   CRAFATAR_INSTANCE: "https://skins.cdn.lostkingdoms.fr",
-  RELEASE_NOTES: "https://github.com/dscalzi/HeliosLauncher/releases.atom",
+  RELEASE_NOTES: "null",
 };
