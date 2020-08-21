@@ -18,10 +18,10 @@ function getCurrentPlatform(){
 builder.build({
     targets: (process.argv[2] != null && Platform[process.argv[2]] != null ? Platform[process.argv[2]] : getCurrentPlatform()).createTarget(),
     config: {
-        appId: 'areslauncher',
-        productName: 'Ares Launcher',
+        appId: 'lostkingdoms',
+        productName: 'LostKingdoms',
         artifactName: '${productName}-setup-${version}.${ext}',
-        copyright: 'Copyright © 2020 Ares',
+        copyright: 'Copyright © 2020 LostKingdoms',
         directories: {
             buildResources: 'build',
             output: 'dist'
@@ -48,8 +48,8 @@ builder.build({
             target: 'AppImage',
             maintainer: 'Vulcain',
             vendor: 'ares',
-            synopsis: 'Ares Launcher',
-            description: 'Prenez part à l\'aventure ares !',
+            synopsis: 'LostKingdoms',
+            description: 'Prenez part à l\'aventure LostKingdoms !',
             category: 'Game'
         },
         compression: 'maximum',
