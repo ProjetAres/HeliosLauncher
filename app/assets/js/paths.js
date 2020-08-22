@@ -7,6 +7,6 @@ module.exports = {
   DISTRO_URL: "https://cdn.lostkingdoms.fr/launcher/distribution.json",
   DARWIN_DMG: (info) =>
     `https://github.com/dscalzi/HeliosLauncher/releases/download/v${info.version}/helioslauncher-setup-${info.version}.dmg`,
-  CRAFATAR_INSTANCE: "https://skins.cdn.lostkingdoms.fr",
+  CRAFATAR_INSTANCE: "https://crafatar.lostkingdoms.fr",
   RELEASE_NOTES: "null",
 };
