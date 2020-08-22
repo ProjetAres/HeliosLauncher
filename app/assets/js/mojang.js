@@ -20,10 +20,28 @@ const authpath = PATHS.AUTHPATH;
 
 const statuses = [
     {
-        service: 'ares.lul.tf',
+        service: 'internal-api.lostkingdoms.fr',
         status: 'grey',
-        name: 'Multiplayer Session Service',
+        name: 'Services multijoueurs',
         essential: true
+    },
+    {
+        service: 'cdn.lostkingdoms.fr',
+        status: 'grey',
+        name: 'Fichiers de jeu',
+        essential: false
+    },
+    {
+        service: 'skins.lostkingdoms.fr',
+        status: 'grey',
+        name: 'Serveur de skins',
+        essential: false
+    },
+    {
+        service: 'crafatar.lostkingdoms.fr',
+        status: 'grey',
+        name: 'Serveur de rendu de skins',
+        essential: false
     }
 ]
 
