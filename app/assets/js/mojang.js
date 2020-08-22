@@ -36,12 +36,6 @@ const statuses = [
         status: 'grey',
         name: 'Serveur de skins',
         essential: false
-    },
-    {
-        service: 'crafatar.lostkingdoms.fr',
-        status: 'grey',
-        name: 'Serveur de rendu de skins',
-        essential: false
     }
 ]
 
