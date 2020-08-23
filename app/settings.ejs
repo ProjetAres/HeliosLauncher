@@ -12,8 +12,10 @@
                     <button class="settingsNavItem" rSc="settingsTabJava">Java</button>
                     <button class="settingsNavItem" rSc="settingsTabLauncher">Launcher</button>
                     <div class="settingsNavSpacer"></div>
-                    <button class="settingsNavItem" rSc="settingsTabAbout">À propos</button>
-                    <button class="settingsNavItem" rSc="settingsTabUpdate" id="settingsNavUpdate">Mise à jour</button>
+                     <!-- <button class="settingsNavItem" rSc="settingsTabAbout">À propos</button> -->
+                    <button class="settingsNavItem" rSc="settingsTabUpdate" id="settingsNavUpdate">À propos</button>
+                    <button class="settingsNavItem" href="#">Forum</button>
+                    <button class="settingsNavItem" href="#">Discord</button>
                     <div id="settingsNavContentBottom">
                         <div class="settingsNavDivider"></div>
                         <button id="settingsNavDone">Terminé</button>
@@ -272,11 +274,11 @@
                 <span class="settingsTabHeaderText">À propos</span>
                 <span class="settingsTabHeaderDesc">Afficher les informations et les notes de la version actuelle.</span>
             </div>
-            <div id="settingsAboutCurrentContainer">
-                <div id="settingsAboutCurrentContent">
-                    <div id="settingsAboutCurrentHeadline">
-                        <img id="settingsAboutLogo" src="./assets/images/null">
-                        <span id="settingsAboutTitle">LostKingdoms</span>
+            <div class="settingsChangelogContainer">
+                <div class="settingsChangelogContent">
+                    <div class="settingsChangelogHeadline">
+                        <div class="settingsChangelogLabel">Notes de version</div>
+                        <div class="settingsChangelogTitle">Changelog</div>
                     </div>
                     <div id="settingsAboutCurrentVersion">
                         <div id="settingsAboutCurrentVersionCheck">&#10003;</div>
@@ -287,19 +289,6 @@
                                 <span id="settingsAboutCurrentVersionValue">0.0.1-NOTLOADED</span>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div id="settingsAboutButtons">
-                    <!-- The following must be included in third-party usage. -->
-                    <!-- <a href="https://github.com/dscalzi/HeliosLauncher" id="settingsAboutSourceButton" class="settingsAboutButton">Original Source</a> -->
-                    <a href="#" id="settingsAboutDevToolsButton" class="settingsAboutButton">DevTools</a>
-                </div>
-            </div>
-            <div class="settingsChangelogContainer">
-                <div class="settingsChangelogContent">
-                    <div class="settingsChangelogHeadline">
-                        <div class="settingsChangelogLabel">Notes de version</div>
-                        <div class="settingsChangelogTitle">Changelog</div>
                     </div>
                     <div class="settingsChangelogText">
                         No Release Notes
@@ -312,10 +301,22 @@
         </div>
         <div id="settingsTabUpdate" class="settingsTab" style="display: none;">
             <div class="settingsTabHeader">
-                <span class="settingsTabHeaderText">Mises à jour du launcher</span>
-                <span class="settingsTabHeaderDesc">Téléchargez et installez les mises à jour du launcher.</span>
+                <span class="settingsTabHeaderText">À propos</span>
+                <span class="settingsTabHeaderDesc">Afficher, téléchargez et installez les mises à jour du launcher.</span>
             </div>
-            <div id="settingsUpdateStatusContainer">
+<div id="settingsAboutCurrentContainer">
+                <div id="settingsAboutCurrentContent">
+                    <div id="settingsAboutCurrentHeadline">
+                        <img id="settingsAboutLogo" src="./assets/images/null">
+                        <span id="settingsAboutTitle">LostKingdoms</span>
+                    </div>
+                </div>
+                <div id="settingsAboutButtons">
+                    <!-- The following must be included in third-party usage. -->
+                    <!-- <a href="https://github.com/dscalzi/HeliosLauncher" id="settingsAboutSourceButton" class="settingsAboutButton">Original Source</a> -->
+                    <a href="#" id="settingsAboutDevToolsButton" class="settingsAboutButton">DevTools</a>
+                </div>
+            </div>            <div id="settingsUpdateStatusContainer">
                 <div id="settingsUpdateStatusContent">
                     <div id="settingsUpdateStatusHeadline">
                         <span id="settingsUpdateTitle">Vous jouer avec la dernière version</span>
