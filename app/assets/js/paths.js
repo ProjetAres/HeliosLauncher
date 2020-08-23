@@ -6,7 +6,7 @@ module.exports = {
   LAUNCHERDATA: "https://launchermeta.mojang.com/mc/launcher.json",
   DISTRO_URL: "https://cdn.lostkingdoms.fr/launcher/distribution.json",
   DARWIN_DMG: (info) =>
-    `https://github.com/dscalzi/HeliosLauncher/releases/download/v${info.version}/helioslauncher-setup-${info.version}.dmg`,
+    `https://github.com/ProjetAres/HeliosLauncher/releases/download/v${info.version}/LostKingdoms-setup-${info.version}.dmg`,
   CRAFATAR_INSTANCE: "https://crafatar.lostkingdoms.fr",
   RELEASE_NOTES: "null",
 };
